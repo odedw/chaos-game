@@ -117,11 +117,11 @@ namespace ChaosTest
         {
             if (Equals(sender, btnDenominatorUp))
                 Controller.Denominator++;
-            else if (Equals(sender, btnDenominatorDown))
+            else if (Equals(sender, btnDenominatorDown) && Controller.Denominator > 1)
                 Controller.Denominator--;
             else if (Equals(sender, btnVerticesUp))
                 Controller.NumberOfVertices++;
-            else if (Equals(sender, btnVerticesDown))
+            else if (Equals(sender, btnVerticesDown) && Controller.NumberOfVertices > 1)
                 Controller.NumberOfVertices--;
             btnRun_Click(null,e);
         }
