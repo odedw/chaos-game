@@ -1,0 +1,50 @@
+﻿<Window x:Class="ChaosTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Chaos Game Test" SizeToContent="WidthAndHeight"  Background="#E6E6E6" WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        >
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Left" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            
+            <TextBlock Text="Interval (ms):" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="tbInterval" Text="{Binding Interval}" Grid.Row="0" Grid.Column="1"/>
+            <TextBlock Text="Denominator:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox  Text="{Binding Denominator}" Grid.Row="2" Grid.Column="1"/>
+            <TextBlock Text="Number of Vertices:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBox  Text="{Binding NumberOfVertices}" Grid.Row="4" Grid.Column="1"/>
+            <TextBlock Text="{Binding NumberOfVertices}" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Denominator}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Button x:Name="btnVerticesUp" Grid.Row="5" Grid.Column="0" Content="Up" Width="30" Click="btn_Click"/>
+            <Button x:Name="btnVerticesDown" Grid.Row="7" Grid.Column="0" Content="Down" Width="30" Click="btn_Click"/>
+            <Button x:Name="btnDenominatorUp" Grid.Row="5" Grid.Column="1" Content="Up" Width="30" Click="btn_Click"/>
+            <Button x:Name="btnDenominatorDown" Grid.Row="7" Grid.Column="1" Content="Down" Width="30" Click="btn_Click"/>
+
+            <Grid Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Width="auto">
+                <Button x:Name="btnRun" Content="Run" HorizontalAlignment="Left" Width="70" Click="btnRun_Click" />
+                <Button x:Name="btnReset" Content="Reset" HorizontalAlignment="Right" Width="70" Height="30" VerticalAlignment="Bottom" Click="btnReset_Click"/>
+            </Grid>
+        </Grid>
+        
+        <Border Style="{StaticResource SeparatorStyle}" DockPanel.Dock="Left" />
+        <Border x:Name="imgContainer" DockPanel.Dock="Right" BorderBrush="Black" BorderThickness="1" Margin="10" Background="Azure" Loaded="Border_Loaded_1"
+                Height="500" Width="500">
+            <Image x:Name="img" Width="auto" Height="auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+        </Border>
+    </DockPanel>
+</Window>
